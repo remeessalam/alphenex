@@ -18,12 +18,15 @@ import Services from "./pages/Services";
 export { logoImg };
 
 export const companyDetails = {
-  phone: "+916296199031",
+  phone: "+91-96739531663",
   address: "Paschimpara,Amlapara,Bongaon,Pin-743235",
   email: "absdd@example.com",
-  linkedin: "",
-  instagram: "",
-  twitter: "",
+  linkedin: "https://www.linkedin.com/company/alphenex-informatic/",
+  instagram:
+    "https://www.instagram.com/alphenexinformatic?igsh=MTAzbW92c3B0YWljeQ==",
+  facebook: "https://www.facebook.com/share/1UyWANTXHn/",
+  whatappling:
+    "https://api.whatsapp.com/send/?phone=916296199031&text&type=phone_number&app_absent=0",
 };
 
 export const routes = [

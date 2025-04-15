@@ -2,6 +2,7 @@ import React from "react";
 import { companyDetails, logoImg, routes } from "../../constant";
 import {
   ChevronRight,
+  Facebook,
   Instagram,
   Linkedin,
   Mail,
@@ -43,10 +44,10 @@ const WebsiteFooter = () => {
             </Link>
             <Link
               aria-label="Contact us on Twitter"
-              to={companyDetails.twitter}
+              to={companyDetails.facebook}
               className="w-[2rem] h-[2rem] rounded-full p-2 bg-primary hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
             >
-              <Twitter strokeWidth={1.5} size={20} />
+              <Facebook strokeWidth={1.5} size={20} />
             </Link>
             <Link
               aria-label="Contact us on LinkedIn"

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { companyDetails, logoImg, routes } from "../constant";
 import {
   ChevronRight,
+  Facebook,
   Instagram,
   Linkedin,
   Mail,
@@ -69,10 +70,10 @@ const ThankYou = () => {
                 <Instagram strokeWidth={1.5} size={20} />
               </Link>
               <Link
-                to={companyDetails.twitter}
+                to={companyDetails.facebook}
                 className="w-[2rem] h-[2rem] rounded-full p-2 hover:text-white  bg-white hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
               >
-                <Twitter strokeWidth={1.5} size={20} />
+                <Facebook strokeWidth={1.5} size={20} />
               </Link>
               <Link
                 to={companyDetails.linkedin}
