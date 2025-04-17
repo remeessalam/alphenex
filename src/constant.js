@@ -14,6 +14,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
+import LandingPage from "./pages/LandingPage";
 
 export { logoImg };
 
@@ -44,6 +45,16 @@ export const routes = [
     path: "/services",
     name: "Services",
     element: <Services />,
+  },
+  {
+    path: "/web-development",
+    name: "Web Development",
+    element: <LandingPage page={"web-development"} />,
+  },
+  {
+    path: "/app-development",
+    name: "App Development",
+    element: <LandingPage page={"app-development"} />,
   },
   {
     path: "/contact-us",

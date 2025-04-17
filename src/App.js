@@ -60,6 +60,7 @@ function App() {
               path="/app-development"
               element={<LandingPage page={"app-development"} />}
             />
+            {/* <Route path="/loading" element={<LoadingSpinner />} /> */}
           </Routes>
         </Router>
       </SpinnerContextProvider>
