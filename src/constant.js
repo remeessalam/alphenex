@@ -20,7 +20,7 @@ export { logoImg };
 export const companyDetails = {
   phone: "+91-96739531663",
   address: "Paschimpara,Amlapara,Bongaon,Pin-743235",
-  email: "absdd@example.com",
+  email: "alphenexInformatic@gmail.com",
   linkedin: "https://www.linkedin.com/company/alphenex-informatic/",
   instagram:
     "https://www.instagram.com/alphenexinformatic?igsh=MTAzbW92c3B0YWljeQ==",
