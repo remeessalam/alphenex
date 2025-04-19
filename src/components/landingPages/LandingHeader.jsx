@@ -3,8 +3,9 @@ import { Divide as Hamburger } from "hamburger-react";
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { logoImg } from "../../constant";
-import { X } from "lucide-react";
+import { X, Info } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { TiInfoLarge } from "react-icons/ti";
 
 const options = [
   {
@@ -27,6 +28,7 @@ const options = [
 
 const LandingHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -40,20 +42,23 @@ const LandingHeader = () => {
             {/* Preload the logo image */}
             <link rel="preload" href={logoImg} as="image" type="image/png" />
           </Helmet>
-          <Link
-            aria-label="Home"
-            smooth={true}
-            to="banner"
-            className="cursor-pointer"
-          >
-            <img
-              width="150"
-              height="100"
-              src={logoImg}
-              className="h-[3rem] md:h-[3.75rem] scale-125 object-contain"
-              alt="logo"
-            />
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              aria-label="Home"
+              smooth={true}
+              to="banner"
+              className="cursor-pointer"
+            >
+              <img
+                width="150"
+                height="100"
+                src={logoImg}
+                className="h-[3rem] md:h-[3.75rem] scale-125 object-contain"
+                alt="logo"
+              />
+            </Link>
+          </div>
+
           <div className="lg:flex items-center gap-10 hidden">
             {options
               .filter((option) => option.path !== "contact")
@@ -72,7 +77,7 @@ const LandingHeader = () => {
                 </Link>
               ))}
             <Link
-              to="contact"
+              href="/"
               className="primary-btn"
               spy={true}
               smooth={true}
@@ -81,6 +86,26 @@ const LandingHeader = () => {
             >
               Contact Us
             </Link>
+            {/* Info Button */}
+            <div className="relative">
+              <a
+                href="/"
+                // smooth={true}
+                className="flex items-center justify-center w-8 h-8 rounded-full border border-white cursor-pointer transition-colors duration-300 hover:bg-primary hover:text-white"
+                onMouseEnter={() => setShowTooltip(true)}
+                onMouseLeave={() => setShowTooltip(false)}
+                aria-label="Information"
+              >
+                <TiInfoLarge className="text-xl" />
+              </a>
+
+              {/* Tooltip */}
+              {showTooltip && (
+                <div className="absolute left-1/2 transform -translate-x-3/4 mt-4 p-2 bg-white text-tertiary rounded shadow-lg text-xs w-64 z-10">
+                  Click to visit our main pages to check out other services
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <Drawer
@@ -98,7 +123,7 @@ const LandingHeader = () => {
             </button>
           </div>
           <div className="flex flex-col gap-6">
-            {options.map(({ name, path, id }) => (
+            {options.map(({ name, path }, id) => (
               <Link
                 onClick={() => setIsOpen(false)}
                 key={id}

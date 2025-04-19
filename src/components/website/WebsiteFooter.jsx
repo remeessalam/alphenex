@@ -38,21 +38,27 @@ const WebsiteFooter = () => {
             <Link
               aria-label="Contact us on Instagram"
               to={companyDetails.instagram}
-              className="w-[2rem] h-[2rem] rounded-full p-2 bg-primary hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[2rem] h-[2rem] rounded-full hover:text-white p-2 bg-primary hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
             >
               <Instagram strokeWidth={1.5} size={20} />
             </Link>
             <Link
-              aria-label="Contact us on Twitter"
+              aria-label="Contact us on Facebook"
               to={companyDetails.facebook}
-              className="w-[2rem] h-[2rem] rounded-full p-2 bg-primary hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[2rem] h-[2rem] rounded-full hover:text-white p-2 bg-primary hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
             >
               <Facebook strokeWidth={1.5} size={20} />
             </Link>
             <Link
               aria-label="Contact us on LinkedIn"
               to={companyDetails.linkedin}
-              className="w-[2rem] h-[2rem] rounded-full p-2 bg-primary hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-[2rem] h-[2rem] rounded-full hover:text-white p-2 bg-primary hover:bg-tertiary hover:-translate-y-1 transition-all duration-300 flex justify-center items-center"
             >
               <Linkedin strokeWidth={1.5} size={20} />
             </Link>

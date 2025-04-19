@@ -15,6 +15,7 @@ const JoinHappyCustomers = React.lazy(() =>
 const WebsiteFooter = React.lazy(() =>
   import("../components/website/WebsiteFooter")
 );
+const LeadForm = React.lazy(() => import("../components/LeadForm"));
 
 const Services = () => {
   return (
@@ -29,6 +30,8 @@ const Services = () => {
       <WhyChooseUs />
       <Testimonials />
       <JoinHappyCustomers />
+      <LeadForm />
+
       <WebsiteFooter />
     </>
   );

@@ -19,7 +19,7 @@ import LandingPage from "./pages/LandingPage";
 export { logoImg };
 
 export const companyDetails = {
-  phone: "+91-96739531663",
+  phone: "+91-9673953166",
   address: "Paschimpara,Amlapara,Bongaon,Pin-743235",
   email: "alphenexInformatic@gmail.com",
   linkedin: "https://www.linkedin.com/company/alphenex-informatic/",
@@ -45,16 +45,20 @@ export const routes = [
     path: "/services",
     name: "Services",
     element: <Services />,
-  },
-  {
-    path: "/web-development",
-    name: "Web Development",
-    element: <LandingPage page={"web-development"} />,
-  },
-  {
-    path: "/app-development",
-    name: "App Development",
-    element: <LandingPage page={"app-development"} />,
+    children: [
+      {
+        path: "/web-development",
+        name: "Web Development",
+      },
+      {
+        path: "/app-development",
+        name: "App Development",
+      },
+      {
+        path: "/services",
+        name: "Services",
+      },
+    ],
   },
   {
     path: "/contact-us",
@@ -259,168 +263,168 @@ export const testimonials = [
   },
 ];
 
-export const allServicess = [
-  {
-    id: 1,
-    title: "Web Development",
-    description:
-      "In the digital era, your website is often the first point of interaction with your audience. At ALPHENEX INFORMATIC, our Web Development services focus on creating high-performance, secure, and visually captivating websites that not only meet but exceed user expectations. Whether you’re building an informative platform, an e-commerce store, or a custom web application, we ensure your site is both functional and user-friendly.",
-    listHeading: "Our Web Development Expertise Includes:",
-    list: [
-      "Tailored Web Solutions",
-      "E-Commerce Development",
-      "Content Management Systems (CMS)",
-      "API Integration & Customization",
-      "Ongoing Maintenance & Optimization",
-    ],
-    icon: (
-      <FaGlobe className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-  {
-    id: 2,
-    title: "App Development",
-    description:
-      "Mobile apps have become a powerful way to engage users, streamline operations, and grow your business. Our App Development team builds intuitive, efficient, and dynamic mobile applications for both iOS and Android platforms. From concept to deployment, we focus on creating apps that are easy to use, scalable, and aligned with your business goals.",
-    listHeading: "What We Offer in App Development:",
+// export const allServicess = [
+//   // {
+//   //   id: 1,
+//   //   title: "Web Development",
+//   //   description:
+//   //     "In the digital era, your website is often the first point of interaction with your audience. At ALPHENEX INFORMATIC, our Web Development services focus on creating high-performance, secure, and visually captivating websites that not only meet but exceed user expectations. Whether you’re building an informative platform, an e-commerce store, or a custom web application, we ensure your site is both functional and user-friendly.",
+//   //   listHeading: "Our Web Development Expertise Includes:",
+//   //   list: [
+//   //     "Tailored Web Solutions",
+//   //     "E-Commerce Development",
+//   //     "Content Management Systems (CMS)",
+//   //     "API Integration & Customization",
+//   //     "Ongoing Maintenance & Optimization",
+//   //   ],
+//   //   icon: (
+//   //     <FaGlobe className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+//   //   ),
+//   // },
+//   // {
+//   //   id: 2,
+//   //   title: "App Development",
+//   //   description:
+//   //     "Mobile apps have become a powerful way to engage users, streamline operations, and grow your business. Our App Development team builds intuitive, efficient, and dynamic mobile applications for both iOS and Android platforms. From concept to deployment, we focus on creating apps that are easy to use, scalable, and aligned with your business goals.",
+//   //   listHeading: "What We Offer in App Development:",
 
-    list: [
-      "Native & Hybrid Mobile Apps",
-      "Cross-Platform Development",
-      "User-Centric UI/UX Design",
-      "App Store Optimization (ASO)",
-      "Continuous App Support & Updates",
-    ],
-    icon: (
-      <FaMobileAlt className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-  {
-    id: 3,
-    title: "Blockchain Development",
-    description:
-      "Blockchain technology is revolutionizing industries by providing a secure, transparent, and decentralized method for managing data. At ALPHENEX INFORMATIC, we help businesses unlock the potential of blockchain through customized solutions that ensure privacy, security, and efficiency. Whether you’re exploring cryptocurrency, smart contracts, or decentralized applications, we have the expertise to guide you.",
-    listHeading: "Our Blockchain Development Services Include:",
+//   //   list: [
+//   //     "Native & Hybrid Mobile Apps",
+//   //     "Cross-Platform Development",
+//   //     "User-Centric UI/UX Design",
+//   //     "App Store Optimization (ASO)",
+//   //     "Continuous App Support & Updates",
+//   //   ],
+//   //   icon: (
+//   //     <FaMobileAlt className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+//   //   ),
+//   // },
+//   {
+//     id: 3,
+//     title: "Blockchain Development",
+//     description:
+//       "Blockchain technology is revolutionizing industries by providing a secure, transparent, and decentralized method for managing data. At ALPHENEX INFORMATIC, we help businesses unlock the potential of blockchain through customized solutions that ensure privacy, security, and efficiency. Whether you’re exploring cryptocurrency, smart contracts, or decentralized applications, we have the expertise to guide you.",
+//     listHeading: "Our Blockchain Development Services Include:",
 
-    list: [
-      "Custom Blockchain Solutions",
-      "Smart Contract Development",
-      "Decentralized Application (dApp) Development",
-      "Cryptocurrency Solutions",
-      "Blockchain Consulting & Strategy",
-    ],
-    icon: (
-      <FaLock className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-  {
-    id: 4,
-    title: "Artificial Intelligence",
-    description:
-      "Artificial Intelligence (AI) is changing the way businesses operate. At ALPHENEX INFORMATIC, we integrate AI to help you automate processes, enhance decision-making, and gain deeper insights from your data. Our AI-driven solutions range from predictive analytics to intelligent virtual assistants, empowering businesses to work smarter, not harder.",
-    listHeading: "Our AI Development Services Include:",
+//     list: [
+//       "Custom Blockchain Solutions",
+//       "Smart Contract Development",
+//       "Decentralized Application (dApp) Development",
+//       "Cryptocurrency Solutions",
+//       "Blockchain Consulting & Strategy",
+//     ],
+//     icon: (
+//       <FaLock className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+//     ),
+//   },
+//   {
+//     id: 4,
+//     title: "Artificial Intelligence",
+//     description:
+//       "Artificial Intelligence (AI) is changing the way businesses operate. At ALPHENEX INFORMATIC, we integrate AI to help you automate processes, enhance decision-making, and gain deeper insights from your data. Our AI-driven solutions range from predictive analytics to intelligent virtual assistants, empowering businesses to work smarter, not harder.",
+//     listHeading: "Our AI Development Services Include:",
 
-    list: [
-      "Machine Learning Integration",
-      "Predictive Analytics",
-      "Natural Language Processing (NLP)",
-      "Chatbots & Virtual Assistants",
-      "Automation Solutions",
-    ],
-    icon: (
-      <FaBrain className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-  {
-    id: 5,
-    title: "Machine Learning",
-    description:
-      "Data is one of your most valuable assets. Our Machine Learning services help businesses harness the power of data through sophisticated algorithms and predictive models. By transforming raw data into meaningful insights, we help you make informed decisions, optimize operations, and predict future trends with precision.",
-    listHeading: "What We Offer in Machine Learning:",
+//     list: [
+//       "Machine Learning Integration",
+//       "Predictive Analytics",
+//       "Natural Language Processing (NLP)",
+//       "Chatbots & Virtual Assistants",
+//       "Automation Solutions",
+//     ],
+//     icon: (
+//       <FaBrain className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+//     ),
+//   },
+//   {
+//     id: 5,
+//     title: "Machine Learning",
+//     description:
+//       "Data is one of your most valuable assets. Our Machine Learning services help businesses harness the power of data through sophisticated algorithms and predictive models. By transforming raw data into meaningful insights, we help you make informed decisions, optimize operations, and predict future trends with precision.",
+//     listHeading: "What We Offer in Machine Learning:",
 
-    list: [
-      "Data Analysis & Visualization",
-      "Custom ML Models",
-      "Predictive Analytics & Forecasting",
-      "Algorithm Optimization",
-      "Data-Driven Insights",
-    ],
-    icon: (
-      <FaChartLine className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-  {
-    id: 6,
-    title: "Cloud Computing",
-    description:
-      "As businesses increasingly rely on cloud infrastructure to scale operations, we provide comprehensive Cloud Computing services to help you harness the power of the cloud. Whether it’s cloud migration, application development, or infrastructure management, we ensure your cloud environment is secure, cost-effective, and adaptable to your needs.",
-    listHeading: "Our Cloud Computing Services Include:",
+//     list: [
+//       "Data Analysis & Visualization",
+//       "Custom ML Models",
+//       "Predictive Analytics & Forecasting",
+//       "Algorithm Optimization",
+//       "Data-Driven Insights",
+//     ],
+//     icon: (
+//       <FaChartLine className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+//     ),
+//   },
+//   {
+//     id: 6,
+//     title: "Cloud Computing",
+//     description:
+//       "As businesses increasingly rely on cloud infrastructure to scale operations, we provide comprehensive Cloud Computing services to help you harness the power of the cloud. Whether it’s cloud migration, application development, or infrastructure management, we ensure your cloud environment is secure, cost-effective, and adaptable to your needs.",
+//     listHeading: "Our Cloud Computing Services Include:",
 
-    list: [
-      "Cloud Migration & Strategy",
-      "Cloud Application Development",
-      "Infrastructure as a Service (IaaS)",
-      "DevOps & Continuous Integration",
-      "SaaS & PaaS Solutions",
-    ],
-    icon: (
-      <FaCloud className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-  {
-    id: 7,
-    title: "UI/UX Design",
-    description:
-      "The user experience (UX) and user interface (UI) are at the heart of every digital product. Our UI/UX Design team focuses on understanding the needs of your target audience, creating designs that are not only visually appealing but also intuitive and functional. We work closely with you to craft user experiences that engage, delight, and drive results.",
-    listHeading: "Our UI/UX Design Process Includes:",
-    list: [
-      "User Research & Persona Development",
-      "Wireframing & Prototyping",
-      "Interactive UI Design",
-      "User Testing & Feedback",
-      "Responsive & Mobile-Friendly Design",
-    ],
-    icon: (
-      <FaPencilRuler className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-];
+//     list: [
+//       "Cloud Migration & Strategy",
+//       "Cloud Application Development",
+//       "Infrastructure as a Service (IaaS)",
+//       "DevOps & Continuous Integration",
+//       "SaaS & PaaS Solutions",
+//     ],
+//     icon: (
+//       <FaCloud className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+//     ),
+//   },
+//   {
+//     id: 7,
+//     title: "UI/UX Design",
+//     description:
+//       "The user experience (UX) and user interface (UI) are at the heart of every digital product. Our UI/UX Design team focuses on understanding the needs of your target audience, creating designs that are not only visually appealing but also intuitive and functional. We work closely with you to craft user experiences that engage, delight, and drive results.",
+//     listHeading: "Our UI/UX Design Process Includes:",
+//     list: [
+//       "User Research & Persona Development",
+//       "Wireframing & Prototyping",
+//       "Interactive UI Design",
+//       "User Testing & Feedback",
+//       "Responsive & Mobile-Friendly Design",
+//     ],
+//     icon: (
+//       <FaPencilRuler className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+//     ),
+//   },
+// ];
 
 export const allServices = [
-  {
-    id: 1,
-    title: "Web Development",
-    description:
-      "Your website is a crucial part of your brand, and it needs to do more than just look good—it has to perform well. Our Web Development services are focused on creating high-quality, responsive, and user-friendly websites that deliver exceptional value for your business. We take the time to understand your needs and goals, and work with you to create a website that is functional, visually appealing, and scalable. Whether you're looking for an e-commerce platform, a custom-built solution, or a content management system (CMS), we ensure that your website will be secure, easy to maintain, and ready to grow as your business expands.",
-    listHeading: "Our Web Development Services Include:",
-    listServices: [
-      "Custom Website Development: Designed to suit your unique business requirements.",
-      "E-Commerce Solutions: Secure and engaging online stores to help you reach more customers.",
-      "CMS Integration: Easy-to-use systems that empower you to manage your content efficiently.",
-      "API Development and Integration: Boost your website’s functionality with custom APIs.",
-      "Performance Optimization: Ensuring your website loads quickly and works seamlessly for your visitors.",
-    ],
-    icon: (
-      <FaLaptopCode className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
-  {
-    id: 2,
-    title: "App Development",
-    description:
-      "In today’s mobile-first world, an app can be a game-changer for your business. Whether it’s an internal tool or a customer-facing app, our App Development services are designed to build high-quality mobile applications that meet your business needs. Our approach focuses on delivering applications that are not only user-friendly but also scalable and secure. Whether you're looking to develop a native app for iOS or Android or a cross-platform solution, we ensure the end result is a seamless, engaging experience that your users will love.",
-    listHeading: "Our App Development Services Include:",
-    listServices: [
-      "Native App Development: High-performance apps designed for iOS and Android.",
-      "Cross-Platform Apps: A cost-effective approach to building apps for multiple platforms.",
-      "UI/UX Design: Crafting beautiful and functional interfaces to enhance user engagement.",
-      "App Maintenance and Support: Ongoing support to keep your app running smoothly.",
-      "App Store Optimization (ASO): Boost your app’s visibility and downloads with effective strategies.",
-    ],
-    icon: (
-      <FaMobileAlt className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
-    ),
-  },
+  // {
+  //   id: 1,
+  //   title: "Web Development",
+  //   description:
+  //     "Your website is a crucial part of your brand, and it needs to do more than just look good—it has to perform well. Our Web Development services are focused on creating high-quality, responsive, and user-friendly websites that deliver exceptional value for your business. We take the time to understand your needs and goals, and work with you to create a website that is functional, visually appealing, and scalable. Whether you're looking for an e-commerce platform, a custom-built solution, or a content management system (CMS), we ensure that your website will be secure, easy to maintain, and ready to grow as your business expands.",
+  //   listHeading: "Our Web Development Services Include:",
+  //   listServices: [
+  //     "Custom Website Development: Designed to suit your unique business requirements.",
+  //     "E-Commerce Solutions: Secure and engaging online stores to help you reach more customers.",
+  //     "CMS Integration: Easy-to-use systems that empower you to manage your content efficiently.",
+  //     "API Development and Integration: Boost your website’s functionality with custom APIs.",
+  //     "Performance Optimization: Ensuring your website loads quickly and works seamlessly for your visitors.",
+  //   ],
+  //   icon: (
+  //     <FaLaptopCode className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+  //   ),
+  // },
+  // {
+  //   id: 2,
+  //   title: "App Development",
+  //   description:
+  //     "In today’s mobile-first world, an app can be a game-changer for your business. Whether it’s an internal tool or a customer-facing app, our App Development services are designed to build high-quality mobile applications that meet your business needs. Our approach focuses on delivering applications that are not only user-friendly but also scalable and secure. Whether you're looking to develop a native app for iOS or Android or a cross-platform solution, we ensure the end result is a seamless, engaging experience that your users will love.",
+  //   listHeading: "Our App Development Services Include:",
+  //   listServices: [
+  //     "Native App Development: High-performance apps designed for iOS and Android.",
+  //     "Cross-Platform Apps: A cost-effective approach to building apps for multiple platforms.",
+  //     "UI/UX Design: Crafting beautiful and functional interfaces to enhance user engagement.",
+  //     "App Maintenance and Support: Ongoing support to keep your app running smoothly.",
+  //     "App Store Optimization (ASO): Boost your app’s visibility and downloads with effective strategies.",
+  //   ],
+  //   icon: (
+  //     <FaMobileAlt className="h-[2.5rem] md:h-[3rem]  w-[2.5rem] md:w-[3rem] object-contain group-hover:scale-110 transition-all duration-300" />
+  //   ),
+  // },
   {
     id: 3,
     title: "Blockchain Development",

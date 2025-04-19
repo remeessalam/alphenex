@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { SpinnerContext } from "./SpinnerContext";
 import { companyDetails } from "../constant";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const LeadForm = () => {
   const { setSpinner } = useContext(SpinnerContext);
+  const [phoneValue, setPhoneValue] = useState();
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
+    setValue,
     reset,
     formState: { errors, isSubmitting },
   } = useForm({
@@ -27,7 +31,8 @@ const LeadForm = () => {
   // handle form submit click
   const handleFormSubmit = async (values) => {
     setSpinner(true);
-
+    // console.log(values.phone, phoneValue, "asdfkasdjflaskdjf");
+    // return;
     var emailBody = "Name: " + values.name + "\n\n";
     emailBody += "Email: " + values.email + "\n\n";
     emailBody += "Phone: " + values.phone + "\n\n";
@@ -62,6 +67,23 @@ const LeadForm = () => {
       })
       .finally(() => setSpinner(false));
   };
+
+  // const validatePhoneNumber = (phone) => {
+  //   const digitsOnly = phone.replace(/\D/g, "");
+
+  //   const formattedPhone = `+${digitsOnly}`;
+
+  //   const phoneRegex = /^\+\d{10,17}$/;
+
+  //   if (!phoneRegex.test(formattedPhone)) {
+  //     toast.error(
+  //       "Enter a valid phone number with country code (e.g., +91xxxxxxxxxx, 10–15 digits)."
+  //     );
+  //     return false;
+  //   }
+
+  //   return true;
+  // };
   return (
     <div className="flex flex-col gap-5 py-[5rem]">
       <h2
@@ -124,8 +146,9 @@ const LeadForm = () => {
           </div>
         </div>
         <div className="grid sm:grid-cols-2 gap-5">
-          <div className="flex flex-col gap-1">
+          <div className="">
             <label className="text-sm ml-2 text-white">Phone</label>
+            {/*
             <input
               type="tel"
               className="outline-none p-2 rounded-full bg-white/60 text-secondary placeholder-slate-300"
@@ -137,8 +160,19 @@ const LeadForm = () => {
                   message: "Entered phone number is invalid",
                 },
               })}
+            /> */}
+            <PhoneInput
+              country={"in"}
+              value={phoneValue}
+              enableSearch={true}
+              onChange={(value) => {
+                setPhoneValue(value);
+                setValue("phone", value);
+              }}
+              className="phone-input-custom2"
+              placeholder="Enter phone number"
             />
-            <small className="error-message">{errors.phone?.message}</small>
+            {/* <small className="error-message">{errors.phone?.message}</small> */}
           </div>
           <div className="flex flex-col gap-1">
             <label className="text-sm ml-2 text-white">Subject</label>

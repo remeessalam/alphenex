@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 const WebsiteHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation();
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
@@ -39,17 +40,56 @@ const WebsiteHeader = () => {
           <div className="lg:flex items-center gap-10 hidden">
             {routes
               .filter((option) => option.name !== "Contact Us")
-              .map((option) => (
-                <Link
-                  to={`${option.path}`}
-                  className={`text-sm link ${
-                    option.path === pathname && "text-primary font-medium"
-                  }`}
-                  key={option.path}
-                >
-                  {option.name}
-                </Link>
-              ))}
+              .map((option) =>
+                option.name === "Services" ? (
+                  <div
+                    key={option.path}
+                    className="relative"
+                    onMouseEnter={() => setIsServicesOpen(true)}
+                    onMouseLeave={() => setIsServicesOpen(false)}
+                  >
+                    <Link
+                      to={`${option.path}`}
+                      className={`text-sm link ${
+                        option.path === pathname
+                          ? "text-primary font-medium"
+                          : ""
+                      } hover:text-primary`}
+                    >
+                      {option.name}
+                    </Link>
+
+                    <div
+                      className={`absolute top-full left-0 mt-5 bg-white text-black shadow-md rounded-md py-2 min-w-48 z-10 overflow-hidden transition-all duration-300 ease-in-out ${
+                        isServicesOpen
+                          ? "max-h-56 opacity-100"
+                          : "max-h-0 opacity-0 py-0"
+                      }`}
+                    >
+                      {option.children.map((child) => (
+                        <Link
+                          key={child.path}
+                          to={child.path}
+                          className="block px-4 py-2 text-sm hover:bg-gray-100"
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={option.path}
+                    to={`${option.path}`}
+                    className={`text-sm link ${
+                      option.path === pathname ? "text-primary font-medium" : ""
+                    } hover:text-primary`}
+                  >
+                    {option.name}
+                  </Link>
+                )
+              )}
+
             <Link
               to="/contact-us"
               className="primary-btn"
