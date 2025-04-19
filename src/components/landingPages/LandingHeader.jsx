@@ -137,6 +137,25 @@ const LandingHeader = () => {
                 {name}
               </Link>
             ))}
+            {/* Info Button */}
+            {/* <div className="relative">
+              <a
+                href="/"
+                // smooth={true}
+                className="flex items-center justify-center w-8 h-8 rounded-full border border-black cursor-pointer transition-colors duration-300 hover:bg-primary hover:text-white"
+                onMouseEnter={() => setShowTooltip(true)}
+                onMouseLeave={() => setShowTooltip(false)}
+                aria-label="Information"
+              >
+                <TiInfoLarge className="text-xl text-black" />
+              </a>
+
+              {showTooltip && (
+                <div className="absolute left-1/2 transform -translate-x-3/4 mt-4 p-2 bg-white text-tertiary rounded shadow-lg text-xs w-64 z-10">
+                  Click to visit our main pages to check out other services
+                </div>
+              )}
+            </div> */}
           </div>
         </Drawer>
         <button
