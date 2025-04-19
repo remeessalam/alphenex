@@ -42,7 +42,7 @@ export const routes = [
     element: <AboutUs />,
   },
   {
-    path: "/services",
+    path: "",
     name: "Services",
     element: <Services />,
     children: [
@@ -56,7 +56,7 @@ export const routes = [
       },
       {
         path: "/services",
-        name: "Services",
+        name: "Other Services",
       },
     ],
   },

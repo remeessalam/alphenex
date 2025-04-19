@@ -165,9 +165,11 @@ const LeadForm = () => {
               country={"in"}
               value={phoneValue}
               enableSearch={true}
-              onChange={(value) => {
+              onChange={(value, country) => {
+                console.log(value, country.dialCode, "asdfasdfsdfsdfsdf");
                 setPhoneValue(value);
-                setValue("phone", value);
+                // setValue("phone", value);
+                setValue("phone", `+${country.dialCode}-${value}`);
               }}
               className="phone-input-custom2"
               placeholder="Enter phone number"
