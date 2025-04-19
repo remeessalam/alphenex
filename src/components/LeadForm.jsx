@@ -166,15 +166,20 @@ const LeadForm = () => {
               value={phoneValue}
               enableSearch={true}
               onChange={(value, country) => {
-                console.log(value, country.dialCode, "asdfasdfsdfsdfsdf");
+                console.log(value, country);
+
                 setPhoneValue(value);
-                // setValue("phone", value);
-                setValue("phone", `+${country.dialCode}-${value}`);
+                const dialCode = country.dialCode.toString();
+                let number = value.replace(/\D/g, "");
+                if (number.startsWith(dialCode)) {
+                  number = number.slice(dialCode.length);
+                }
+                setValue("phone", `+${dialCode}-${number}`);
               }}
               className="phone-input-custom2"
               placeholder="Enter phone number"
             />
-            {/* <small className="error-message">{errors.phone?.message}</small> */}
+            <small className="error-message">{errors.phone?.message}</small>
           </div>
           <div className="flex flex-col gap-1">
             <label className="text-sm ml-2 text-white">Subject</label>
