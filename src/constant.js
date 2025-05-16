@@ -19,6 +19,7 @@ import LandingPage from "./pages/LandingPage";
 export { logoImg };
 
 export const companyDetails = {
+  name: "ALPHENEX INFORMATIC",
   phone: "+91-9673953166",
   address: "Paschimpara,Amlapara,Bongaon,Pin-743235",
   email: "alphenexInformatic@gmail.com",
